@@ -32,30 +32,79 @@ Preparing Active Directory Infrastructure in Azure
 The first step is to create a Resource Group in Azure
 
 <img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/e55a4235-7ab6-48dd-b59d-c1dd2d81276f" />
+
  
 Then, name the Resource Group. In this exercise, it will be known as “Active-Directory-Lab”.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/8a3ecf0c-d210-462f-8417-01aeb4afc05d" />
+
  
 After creating the Resource Group, create a new Virtual Network. From Azure, go to Virtual Networks and click “Create Virtual Network”
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/1d7ea1f6-6f05-43ad-89d0-b54beabbd664" />
+
  
 When creating the new Virtual Network, assign it to the resource group created above and name the Virtual Network. For this, it will be named “Active-Directory-Vnet”
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/a960187a-f033-4ae3-a213-cf6dfb68d036" />
+
  
 After creating the Resource Group and Virtual Network, begin creating the Virtual Machine. Go to Virtual Machines in Azure and click “Create”.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/4a2d4b56-54e3-4521-a9ac-6727e08bfb48" />
+
  
-From there, create the Domain Controller VM under the name “DC-1”. Assign the VM to the resource group you created earlier.
+From there, create the Domain Controller VM named “DC-1”. Assign the VM to the resource group you created earlier.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/fbefcc8c-2be3-482f-a8e5-8b1a936eab6f" />
+
  
 Assign DC-1 to the Windows Server 2022 OS virtual machine
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/ac1ae5ca-96ce-4b9c-8244-65eb94bcf06a" />
+
  
-After assigning the OS for the virtual machine, create a username and password for the VM. The username for this VM will be “labuser”.
+After assigning the OS to the virtual machine, create a username and password for the VM. The username for this VM will be “labuser”.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/b9bb71a2-5caf-44c2-96fe-40135500897d" />
+
  
-After configuring the settings for DC-1, its time to click “Review+Create”.
+After configuring the settings for DC-1, click “Review+Create”.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/8abf6584-8602-40e9-8651-bd90017c7839" />
+
  
-Once Validation passes, click “Create” to finalize the VM of DC-1.
+Once Validation passes, click “Create” to finalize the VM for DC-1.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/1c5bbb0a-3ba5-43ea-b6c4-14a8745fad17" />
+
  
 The deployment of the DC-1 Virtual Machine is now successful
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/5cf8a519-8a9f-42c1-9189-109fa45f04dd" />
+
  
 After creating DC-1, return to Virtual Machines in Azure and create another Virtual Machine
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/1d491df1-bbb2-48b5-8a01-b82d1a8f3794" />
+
  
 Be sure to name the virtual machine “Client-1” and have it under the same resource group as DC-1
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/6c17ba9a-b62c-43c5-aa90-c1a62d2ae774" />
+
  
 Assign the Client-1 VM to the Windows 10 OS
  
