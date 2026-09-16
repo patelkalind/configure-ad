@@ -28,7 +28,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-Preparing Active Directory Infrastructure in Azure
+***Preparing Active Directory Infrastructure in Azure***
+
+ 
 The first step is to create a Resource Group in Azure
 
 <img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/e55a4235-7ab6-48dd-b59d-c1dd2d81276f" />
@@ -107,52 +109,143 @@ Be sure to name the virtual machine “Client-1” and have it under the same re
 
  
 Assign the Client-1 VM to the Windows 10 OS
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/9065b945-c3d1-47a3-affb-206d9ca6e402" />
+
  
 Be sure to create a username and password for Client-1. Similar to DC-1, the username will also be “labuser”.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/e58cb8cd-0d4c-4712-9a1e-16505cfc30fb" />
+
  
 After configuring settings for Client-1, its time to click “Review+Create”.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/cd32414a-d60f-4e5f-8157-4a6037c007ab" />
+
  
 Once validation passes for Client-1, click “Create”
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/f64c83c8-b665-4c67-8011-f84ec3bf066a" />
+
  
 The deployment of Client-1 VM has been successful
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/bd6bc7c5-5d3f-42e8-8e20-ef3c67b4337d" />
+
  
 After creating the two VMs, return to the Virtual Machine list on Azure and go to DC-1. From there, go to Network Settings.
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/5eec4757-15f6-430d-9059-9991068ad087" />
+
  
 From there, we will set the Domain Controller’s Network Interface Controller (NIC) private IP address from Dynamic to Static. 
-Within Network Settings, go to Settings  IP Configurations and then click “ipconfig1”. From there, that is where we change the IP to Static. Click Save after completion
+
+Within Network Settings, go to Settings --> IP Configurations and then click “ipconfig1”. From there, that is where we change the IP to Static. Click Save after completion
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/4630ade6-8896-4d3c-91bf-f41ac3435173" />
+
  
 Go to Remote Desktop Connection and login to DC-1 VM. Click Yes to proceed if it asks questions shown in this screenshot below:
+
+
+<img width="816" height="771" alt="image" src="https://github.com/user-attachments/assets/fa3039ac-7231-433f-8166-fe1d8ca7f2f3" />
+
+
  
 Within the DC-1 VM, right click the Start Menu. Go to “Run” and type in “wf.msc” (without the quotations).
+
+
+<img width="738" height="472" alt="image" src="https://github.com/user-attachments/assets/abe57f39-9d01-4a72-a203-0d15cc3d17c5" />
+
  
 Within Windows Defender, click “Properties”
+
+
+<img width="975" height="731" alt="image" src="https://github.com/user-attachments/assets/145c7096-1e07-47b3-b5d3-390f2e4a72a4" />
+
  
 Be sure to turn off the Domain, Private, and Public profiles and then click “Apply”
+
+
+<img width="975" height="371" alt="image" src="https://github.com/user-attachments/assets/3b8f4b36-1ec8-4a04-a939-16463b359179" />
+
  
 After applying these settings, its now time to set Client-1’s DNS settings to match DC-1’s Private IP address.
+
 Return to Azure on your main computer. Go to settings of DC-1 and obtain the private IP address as highlighted below:
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/577752cd-e40c-412c-a104-c8e8f96f8b5f" />
+
  
-After copying the private IP address from DC-1, go to the settings of Client-1 in Azure. Go to Networking  Network Settings  Network Interface
+After copying the private IP address from DC-1, go to the settings of Client-1 in Azure. Go to Networking --> Network Settings --> Network Interface
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/c023c7b3-6010-482e-b161-8fd9acdd9115" />
+
  
 After clicking on Network Interface, click on DNS Servers
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/3f359418-44bb-45e5-aee0-983fa3873927" />
+
  
 After clicking on DNS Servers, click Custom and paste the private IP address from DC-1
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/b8e88c9e-c63f-4b6d-a5a0-953a79b973e7" />
+
  
 Click Save and you have saved the DNS servers
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/3b853b57-830e-4447-9993-aa4a4cb001eb" />
+
  
 Return to Virtual Machines on Azure and click on the Client-1 checkbox. Click Restart and say yes
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/bcdf067e-9f60-4f0a-8aa4-386ab42f0eee" />
+
  
 Return to Remote Desktop Connection and click to connect to Client-1
+
+
+<img width="847" height="486" alt="image" src="https://github.com/user-attachments/assets/efed7d73-64ca-45ff-8e6b-61d7f24eeed2" />
+
  
 Within Client-1, go to Powershell and Run as Administrator
+
+
+<img width="975" height="846" alt="image" src="https://github.com/user-attachments/assets/494fc1a0-e977-4190-9f61-312137178f2d" />
  
 Within Powershell, type ping and the private IP address of VM-1
+
+
+<img width="975" height="728" alt="image" src="https://github.com/user-attachments/assets/dade7e29-9b12-48d6-8a5d-57204859c5d8" />
+
  
 Ensure the ping was successful in Powershell of Client-1
- 
+
+
+<img width="975" height="647" alt="image" src="https://github.com/user-attachments/assets/33798580-823d-434a-bd95-50884a911152" />
+
+
 Continuing with Powershell, run the ipconfig/all command and you shall see the settings of the private IP address
+
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/18a7e043-cf07-46b0-92af-91faf5a23751" />
  
-Deploying Active Directory
+***Deploying Active Directory***
+
+
 After preparing the Active Directory infrastructure in Azure, the next part of the process is to deploy Active Directory. To get started, login to DC-1 and install Active Directory Domain Services.
 Within DC-1, go to the Start Menu and click Server Manager. From there, click Add roles and features
  
