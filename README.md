@@ -248,40 +248,107 @@ Continuing with Powershell, run the ipconfig/all command and you shall see the s
 
 
 After preparing the Active Directory infrastructure in Azure, the next part of the process is to deploy Active Directory. To get started, login to DC-1 and install Active Directory Domain Services.
+
 Within DC-1, go to the Start Menu and click Server Manager. From there, click Add roles and features
+
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/4058b055-3f85-4280-a868-4d80d4fba6a6" />
+
  
 Within “Add roles and features”, go to Server Roles and click Active Directory Domain Services
+
+
+<img width="975" height="694" alt="image" src="https://github.com/user-attachments/assets/8be80cb7-14bb-4888-90e7-0d8c242f8772" />
+
  
 After keeping the default settings in Features and AD DS, go to Confirmation and click Restart
+
+
+<img width="975" height="694" alt="image" src="https://github.com/user-attachments/assets/23cda85d-30ac-49b2-9f26-a7d0efa4f6a2" />
+
  
 Click Install and let the Active Directory install itself
+
+
+<img width="975" height="694" alt="image" src="https://github.com/user-attachments/assets/0402d611-35c8-472c-b06f-7f4e2f34bd97" />
+
  
 Within Server Manager, click on the flag with the yellow symbol. From there, click “promote this server”
+
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/cb8d2fbc-22b8-4f15-a05d-c064c01f4bdd" />
+
  
 Within Deployment Configuration, click Add a new forest and enter mydomain.com as your root domain
+
+
+<img width="975" height="717" alt="image" src="https://github.com/user-attachments/assets/f1e4e2b6-fb4b-4300-ac6f-4dcab8102da2" />
+
  
 In the next step, you will have to create a password under “Domain Controller options”. However, that is merely a temporary thing as we want to be sure to uncheck Create DNS Delegation before proceeding forward
+
+
+<img width="975" height="717" alt="image" src="https://github.com/user-attachments/assets/7ce29580-d493-4bb2-bdda-ae789c7430bf" />
+
  
 After unchecking the DNS delegation, leave the default settings as is. Once that is complete, click Install after the Prerequisite Check
+
+
+<img width="975" height="717" alt="image" src="https://github.com/user-attachments/assets/904a1eb7-d64e-45f4-b44f-28b5e0bb0082" />
+
  
 After the installation has been completed, you are automatically signed out from the DC-1 virtual machine. From there, try to log back in via the host computer. As you can see below, using the generic “labuser” does not work. This is due to the fact that its now part of mydomain.com. 
+
 Therefore, you must log back in to the DC-1 VM under the username mydomain.com\labuser
+
+
+<img width="891" height="1022" alt="image" src="https://github.com/user-attachments/assets/de6cac7f-c5f6-4c05-976a-0d641a44d61e" />
+
  
 After logging back into the VM, go to Start Menu - Windows Administrative Tools - Active Directory Users and Computers
+
+
+<img width="975" height="846" alt="image" src="https://github.com/user-attachments/assets/93aa67f2-133a-4589-a9a6-6e9a3314eab3" />
+
  
 Within Active Directory Users and Comps, right click mydomain.com and go to new for Organizational Units
+
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/57564986-1aed-49a0-b50d-cc9dd1880ebc" />
+
  
 When creating a new Organizational Unit, type in _EMPLOYEES without errors
+
+
+<img width="853" height="738" alt="image" src="https://github.com/user-attachments/assets/16c93c18-40cb-459b-9bf6-e5a06fe4b3a3" />
+
  
 When creating another Organizational Unit, type in _ADMINS without errors
+
+
+<img width="853" height="738" alt="image" src="https://github.com/user-attachments/assets/66617a37-de10-4473-b06d-936b01500376" />
+
  
 After creating the Organizational Units for _ADMINS and _EMPLOYEES, the next step is to create a New User within Admins. Type in Jane Doe and jane_admin as username
+
+
+<img width="853" height="738" alt="image" src="https://github.com/user-attachments/assets/56ec20d7-dc27-4b79-814a-c2d924a386f2" />
+
  
 Create a Password for Jane Doe of your own choosing. Only check “password never expires” for lab exercise only. In real life, passwords must be changed every 90-120 days depending on your organization.
+
+
+<img width="853" height="738" alt="image" src="https://github.com/user-attachments/assets/920492f5-550c-4f25-8c52-0a9f472592c2" />
+
  
-After creating the Jane Doe admin user, its now time to officially make her a domain admin user. 
+After creating the Jane Doe admin user, its now time to officially make her a domain admin user.
+
 Right click Jane Doe's username and go to Properties - Member Of. This is where you click Add
- 
+
+
+<img width="801" height="1050" alt="image" src="https://github.com/user-attachments/assets/0fcba9af-ca83-4fc6-ab7f-4ed619b24957" /> 
+
+
 Type in Domain Admins and click Check Names. Once its there, click OK
  
 Be sure to click Apply for the changes to take effect
