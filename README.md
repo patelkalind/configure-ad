@@ -350,29 +350,77 @@ Right click Jane Doe's username and go to Properties - Member Of. This is where 
 
 
 Type in Domain Admins and click Check Names. Once its there, click OK
+
+
+<img width="893" height="491" alt="image" src="https://github.com/user-attachments/assets/8d6c5c90-153e-4007-a13a-fc32d641499c" />
+
  
 Be sure to click Apply for the changes to take effect
+
+
+<img width="801" height="1050" alt="image" src="https://github.com/user-attachments/assets/cfb0e0b1-ba7c-44ca-93f5-624513efb9b7" />
+
  
 Once this has been completed, log out of DC-1 and log back in as mydomain.com/jane_admin
- 
+
+
+<img width="847" height="949" alt="image" src="https://github.com/user-attachments/assets/b14571fb-3595-42c0-aa10-d5b4ce5716ff" />
+
+
 Simultaneously, log in to the Client VM from the host computer
+
+
+<img width="891" height="722" alt="image" src="https://github.com/user-attachments/assets/a05c1316-69da-45a1-a10c-90a56e479533" />
+
  
 Within Client-1 VM, right click the Start Menu and go to System
+
+
+<img width="975" height="762" alt="image" src="https://github.com/user-attachments/assets/0aec7636-bd05-4a8f-bc4d-a4a785997b22" />
+
  
 Within Change, click on Domain and enter mydomain.com
+
+
+<img width="672" height="751" alt="image" src="https://github.com/user-attachments/assets/64ae7915-43b3-45d1-835b-2cc90a717221" />
+
  
 Login to the mydomain.com with the jane_admin credentials
+
+
+<img width="891" height="585" alt="image" src="https://github.com/user-attachments/assets/699ffbe2-621c-4d5c-8e8e-09ab479f9081" />
+
  
 Click Rename this PC. After that, click on Change
- 
+
+
+<img width="853" height="894" alt="image" src="https://github.com/user-attachments/assets/699ef116-e275-4186-9377-661f2b14f8d9" />
+
+
 The Client-1 VM will restart itself after configuring these settings. 
+
 Return to DC-1 as jane_admin. Verify that Client-1 is present in Active Directory Users and Computers
+
+
+<img width="975" height="685" alt="image" src="https://github.com/user-attachments/assets/34d2d922-11c5-4e51-8f3c-e214fde280ac" />
+
  
 After verifying that Client-1 is present, create a new Organizational Unit called _CLIENTS. 
+
+
+<img width="853" height="738" alt="image" src="https://github.com/user-attachments/assets/17294de4-fb44-4307-9207-8e5a8065da81" />
+
  
 From there, move Client-1 to _CLIENTS
+
+
+<img width="909" height="345" alt="image" src="https://github.com/user-attachments/assets/33892572-75e2-4d13-a744-5623fb6aede6" />
+
+
  
-Creating Users with Powershell
+***Creating Users with Powershell***
+
+
 After configuring Active Directory on DC-1 and Client-1, its now time to create users with Powershell and set up Remote Desktop for non-admin users on Client-1. 
 To start, we must log into Client-1 AS mydomain.com\jane_admin
  
